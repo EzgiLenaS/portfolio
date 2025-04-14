@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 export const Skill_data = [
     {
       skill_name: "Html 5",
@@ -94,8 +96,19 @@ export const Skill_data = [
       src: "/discord.svg",
     },
   ];
-  
-  
+
+  export const Connections = [
+    {
+      name: "Linkedin",
+      src: "/purple-linkedin.svg",
+      link: "https://www.linkedin.com/in/ezgi-lena-sonmez/",
+    },
+    {
+      name: "Github",
+      src: "/purple-github.svg",
+      link: "https://github.com/EzgiLenaS",
+    },
+  ];
   
   export const Frontend_skill = [
     {
