@@ -101,7 +101,7 @@ export const Skill_data = [
     {
       name: "Linkedin",
       src: "/purple-linkedin.svg",
-      link: "https://www.linkedin.com/in/ezgi-lena-sonmez/",
+      link: "https://www.linkedin.com/in/ezgilenasonmez/",
     },
     {
       name: "Github",
