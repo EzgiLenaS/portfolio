@@ -1,59 +1,108 @@
-import React from 'react'
-import ProjectCard from '../sub/ProjectCard'
+import React from "react";
+import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
   return (
-    <div
-    id='projects'
-    className='flex flex-col items-center justify-center py-1'>
-        <h1 className='text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-1'>
-            My Projects
-        </h1>
+    <section
+      id="projects"
+      className="flex flex-col items-center justify-center py-16 gap-8"
+    >
+      <h1 className="text-[32px] md:text-[36px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+        My Projects
+      </h1>
 
-        <h2 className='text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10'>
-            Websites
+      {/*Real-time & Tools*/}
+      { 
+      <div className="w-full max-w-[1100px] flex flex-col gap-4 px-4 md:px-8 mt-8">
+        <h2 className="text-[24px] md:text-[28px] font-semibold text-white mb-2">
+          Real-time Tools
         </h2>
 
-        <div className='h-full w-full flex flex-col md:flex-row gap-10 px-10'>
-            <ProjectCard
-            src="/z-e-commerce.png"
-            title="E-Commerce Store"
-            link="https://github.com/EzgiLenaS/e-commerce-store"
-            description="A full-featured e-commerce platform built with the MERN stack, integrated with Stripe for secure payments and Redis for efficient caching. The project includes a robust authentication system using JWT with access and refresh tokens, along with user signup/login flows. Core e-commerce functionalities such as product and category management, shopping cart, checkout process, and coupon codes are implemented. An admin dashboard provides tools for managing products and viewing sales analytics. The UI is fully responsive and styled with Tailwind CSS. This project allowed me to deepen my understanding of secure full-stack development, performance optimization, and real-world e-commerce workflows."
-            />
-            <ProjectCard
-            src="/z-twitter.png"
-            title="Twitter Clone"
-            link="https://github.com/EzgiLenaS/twitter-clone"
-            description="A social media application inspired by Twitter, developed using React, Node.js, Express, and MongoDB with Tailwind CSS for styling. It includes core features such as JWT-based user authentication, post creation, deletion, commenting, liking, and real-time interaction. Users can follow others, manage their profile details, and upload images via Cloudinary. The app also supports suggested users, notifications, and profile customization. This project allowed me to gain practical experience in full-stack development, React Query for data management, and building scalable social platforms."
-            />
-            <ProjectCard
-            src="/z-product.png"
-            title="Product Store"
-            link="https://github.com/EzgiLenaS/product_store"
-            description="A responsive e-commerce product store built with the MERN stack, featuring product listings, detailed views, and full frontend-backend integration. The project includes a custom-built RESTful API, clean UI with Chakra UI, and robust error handling to ensure smooth user interactions. Developed as part of a learning journey, this application allowed me to practice full-stack development and deploy a fully functional store with real-world structure."
-            />
-             <ProjectCard
-            src="/screenshot-for-readme.png"
-            title="Netflix Clone"
-            link="https://github.com/EzgiLenaS/netflix-clone"
-            description="A fully responsive movie streaming platform built with the MERN stack and styled using Tailwind CSS. The application features user authentication with JWT, dynamic movie and TV show listings, trailer previews, search functionality for both titles and actors, and personalized recommendations. Users can also view similar content suggestions and access search history. This project helped me deepen my understanding of full-stack integration, media API consumption, and responsive UI design optimized for real-world deployment."
-            />
-        </div>
-
-        <h2 className='text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20'>
-            Games
-        </h2>
-
-        <div className='h-full w-full flex flex-col md:flex-row gap-10 px-10'>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProjectCard
-            src="/z-delivery.png"
-            title="The Delivery Driver"
-            description="A 2D top-down delivery game built with Unity and C#, where players pick up packages and deliver them to customers while avoiding obstacles and using boost zones to stay fast. Created as part of a game development course, this project helped me explore core Unity mechanics like collision, trigger zones, and map interaction while designing a fun and dynamic gameplay loop."
-            />
-        </div>
-    </div>
-  )
-}
+            src="/projects/tulululu.png"
+            title="Video Call App (Tulululu)"
+            description="Real-time video call and chat app I actively use with my friends."
+            tech="WebRTC, Socket.io, React, Node.js, MongoDB"
+            liveUrl="https://tulululu.ezgilenasonmez.com/"
+            githubUrl="https://github.com/EzgiLenaS/video_calling"
+          />
 
-export default Projects
+          <ProjectCard
+            src="/projects/karekod2.png"
+            title="Pharmacy Chrome Extension"
+            description="Internal Chrome extension for my family's pharmacy to quickly look up products by barcode."
+            tech="Chrome Extensions, JavaScript"
+            liveUrl="https://chromewebstore.google.com/detail/ezcane-i%CC%87la%C3%A7-karekod-tara/jnpffjojepcgldffnpjkkfjapmepkgkc?hl=tr"
+            githubUrl="https://github.com/EzgiLenaS/pharmacy_extension"
+          />
+        </div>
+      </div>
+      }
+
+      {/* Web Apps */}
+      <div className="w-full max-w-[1100px] flex flex-col gap-4 px-4 md:px-8">
+        <h2 className="text-[24px] md:text-[28px] font-semibold text-white mb-2">
+          Web Apps
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <ProjectCard
+            src="/projects/twitterclone.png"
+            title="Twitter Clone"
+            description="A Twitter-like social media app built while following a MERN tutorial, extended with my own improvements."
+            tech="React, Node.js, MongoDB, Tailwind CSS"
+            liveUrl="https://twitterclone.ezgilenasonmez.com/"        // varsa ekle, yoksa sil
+            githubUrl="https://github.com/EzgiLenaS/twitter-clone"
+          />
+
+          <ProjectCard
+            src="/projects/ecommerce.png"
+            title="E-commerce Store"
+            description="A simple online store for practising product listing, cart, and checkout logic."
+            tech="React, Node.js, MongoDB, Stripe (trial)"
+            liveUrl="https://ecommerce.ezgilenasonmez.com/"
+            githubUrl="https://github.com/EzgiLenaS/e-commerce-store"
+          />
+
+          <ProjectCard
+            src="/projects/product.png"
+            title="Product Management App"
+            description="A small CRUD app for managing products and categories with authentication."
+            tech="MERN stack"
+            liveUrl="https://productstore.ezgilenasonmez.com/"
+            githubUrl="https://github.com/EzgiLenaS/product_store"
+          />
+
+          <ProjectCard
+            src="/projects/streamsphere.png"
+            title="StreamSphere"
+            description="This portfolio site, built with Next.js 13 and Tailwind CSS, deployed on a Hostinger VPS."
+            tech="Next.js, TypeScript, Tailwind CSS"
+            liveUrl="https://streamsphere.ezgilenasonmez.com/"
+            githubUrl="https://github.com/EzgiLenaS/netflix-clone"
+          />
+        </div>
+      </div>
+
+      {/* Games */}
+      <div className="w-full max-w-[1100px] flex flex-col gap-4 px-4 md:px-8 mt-8">
+        <h2 className="text-[24px] md:text-[28px] font-semibold text-white mb-2">
+          Games
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <ProjectCard
+            src="/projects/z-delivery.png"
+            title="The Delivery Driver"
+            description="A 2D top-down delivery game where the player navigates the city and delivers packages under time pressure."
+            tech="Unity, C#"
+            githubUrl="https://github.com/EzgiLenaS/delivery_driver_udemy"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

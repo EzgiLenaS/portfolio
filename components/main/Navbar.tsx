@@ -23,14 +23,14 @@ const Navbar = () => {
             <div className='w-[500px] h-full flex flex-row items-center justify-between md:mr-20'>
                 <div className='flex items-center justify-between w-full h-auto border border-[#7042f861] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200'>
                     <a href="#about-me" className='cursor-pointer'>About Me</a>
-                    <a href="#skills" className='cursor-pointer'>Skills</a>
                     <a href="#projects" className='cursor-pointer'>Projects</a>
+                    <a href="#skills" className='cursor-pointer'>Skills</a>
                 </div>
             </div>
 
             <div className='flex flex-row gap-5'>
                 {Connections.map((contact) => (
-                    <a href={contact.link} className='cursor-pointer'>
+                    <a key={contact.name} href={contact.link} className='cursor-pointer' target="_blank" rel="noopener noreferrer">
                     <Image
                         src={contact.src}
                         alt={contact.name}
