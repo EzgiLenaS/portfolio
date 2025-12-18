@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   slideFromRight,
   slideInFromLeft,
@@ -10,7 +10,28 @@ import {
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+const projectImages = [
+  "/projects/tulululu.png",
+  "/projects/karekod2.png",
+  "/projects/twitterclone.png",
+  "/projects/ecommerce.png",
+  "/projects/product.png",
+  "/projects/streamsphere.png",
+  "/projects/z-delivery.png",
+];
+
 const HeroContect = () => {
+  const [index, setIndex] = useState(0);
+
+  // Her 4.5 saniyede bir görsel değiştir
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % projectImages.length);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
@@ -72,15 +93,25 @@ const HeroContect = () => {
       {/* Sağ taraf - görsel */}
       <motion.div
         variants={slideFromRight(0.8)}
-        className="w-full max-w-[420px] h-full flex justify-center items-center"
+        className="w-full max-w-[420px] h-[300px] md:h-[360px] flex justify-center items-center relative"
       >
-        <Image
-          src="/NextWebsite.png" // istersen başka bir görselle değiştir
-          alt="Portfolio preview"
-          width={650}
-          height={650}
-          className="w-full h-auto rounded-2xl border border-[#2A0E61] bg-black/40 object-cover"
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.6 }}
+            className="absolute w-full h-full"
+          >
+            <Image
+              src={projectImages[index]}
+              alt="Project preview"
+              fill
+              className="object-cover rounded-2xl border border-[#2A0E61] bg-black/40"
+            />
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
     </motion.div>
   );
